@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наше приложение - OcuWave</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.344.0/lucide.min.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 50%, #e0e7ff 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+</head>
+<body class="gradient-bg">
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-blue-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-3">
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <svg width="40" height="40" viewBox="0 0 40 40" class="text-blue-600">
+                                <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="20" cy="20" r="6" fill="currentColor"/>
+                                <circle cx="20" cy="20" r="2" fill="white"/>
+                            </svg>
+                        </div>
+                        <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">OcuWave</span>
+                    </a>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 transition-all duration-300 font-medium">Главная</a>
+                    <a href="app.html" class="text-blue-600 font-semibold">Приложение</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative py-24 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-indigo-600/5 to-purple-600/10"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-8">
+                    Наше <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">приложение</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
+                    Контроль ВГД в кармане. Умное Bluetooth-приложение для OcuWave.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Features Section -->
+    <section class="py-24 bg-gradient-to-r from-white via-blue-50/50 to-indigo-50/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+                    Что делает <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">приложение</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Полный контроль над измерениями внутриглазного давления в удобном мобильном интерфейсе
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/50">
+                    <div class="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                        <i data-lucide="bluetooth" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">Bluetooth подключение</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">Принимает данные от устройства OcuWave через беспроводное соединение</p>
+                </div>
+
+                <div class="group bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/50">
+                    <div class="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                        <i data-lucide="activity" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">Измерения в реальном времени</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">Показывает результат измерения ВГД мгновенно после процедуры</p>
+                </div>
+
+                <div class="group bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/50">
+                    <div class="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-500 to-violet-500 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                        <i data-lucide="bar-chart-3" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">Графики и аналитика</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">Строит наглядные графики динамики изменения внутриглазного давления</p>
+                </div>
+
+                <div class="group bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/50">
+                    <div class="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-orange-500 to-amber-500 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                        <i data-lucide="database" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">История измерений</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">Сохраняет все результаты с возможностью просмотра и анализа</p>
+                </div>
+
+                <div class="group bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/50">
+                    <div class="flex items-center justify-center w-20 h-20 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                        <i data-lucide="send" class="w-10 h-10 text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">Отправка врачу</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed">Позволяет мгновенно отправить результаты лечащему врачу</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connection Process Section -->
+    <section class="py-24 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+                    Как происходит <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">подключение</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Простой процесс подключения устройства к смартфону за несколько шагов
+                </p>
+            </div>
+            
+            <div class="relative">
+                <div class="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-200 via-indigo-300 to-purple-200 transform -translate-y-1/2 hidden lg:block"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                    <div class="relative">
+                        <div class="bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-100">
+                            <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 text-white rounded-2xl text-2xl font-bold mb-6 mx-auto shadow-lg">1</div>
+                            <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-xl mb-4 mx-auto text-blue-600">
+                                <i data-lucide="power" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Включите устройство OcuWave</h3>
+                            <p class="text-gray-600 text-center leading-relaxed">Нажмите кнопку питания на приборе и дождитесь индикации готовности</p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-100">
+                            <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 text-white rounded-2xl text-2xl font-bold mb-6 mx-auto shadow-lg">2</div>
+                            <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-xl mb-4 mx-auto text-blue-600">
+                                <i data-lucide="smartphone" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Откройте приложение</h3>
+                            <p class="text-gray-600 text-center leading-relaxed">Запустите приложение OcuWave на вашем Android устройстве</p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-100">
+                            <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 text-white rounded-2xl text-2xl font-bold mb-6 mx-auto shadow-lg">3</div>
+                            <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-xl mb-4 mx-auto text-blue-600">
+                                <i data-lucide="link" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Нажмите "Подключиться"</h3>
+                            <p class="text-gray-600 text-center leading-relaxed">Выберите ваше устройство из списка доступных Bluetooth устройств</p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-100">
+                            <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 text-white rounded-2xl text-2xl font-bold mb-6 mx-auto shadow-lg">4</div>
+                            <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-xl mb-4 mx-auto text-blue-600">
+                                <i data-lucide="bluetooth" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Разрешите доступ к Bluetooth</h3>
+                            <p class="text-gray-600 text-center leading-relaxed">Подтвердите разрешения для стабильного соединения с прибором</p>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-100">
+                            <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 text-white rounded-2xl text-2xl font-bold mb-6 mx-auto shadow-lg">5</div>
+                            <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-xl mb-4 mx-auto text-blue-600">
+                                <i data-lucide="play" class="w-8 h-8"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Начните измерения</h3>
+                            <p class="text-gray-600 text-center leading-relaxed">После успешного подключения приложение готово к приёму данных</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chart Section -->
+    <section class="py-24 bg-gradient-to-r from-white via-indigo-50/50 to-blue-50/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+                    График <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">измерений</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Наглядное отображение динамики внутриглазного давления в течение дня
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white/90 backdrop-blur-sm p-12 rounded-3xl shadow-2xl border border-blue-100">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4 text-center">График последних измерений</h3>
+                        <div class="flex items-center justify-center space-x-4 mb-8">
+                            <div class="flex items-center space-x-2">
+                                <div class="w-4 h-4 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></div>
+                                <span class="text-gray-600 font-medium">ВГД (мм рт. ст.)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Custom Chart -->
+                    <div class="relative h-80 bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8 border border-gray-200">
+                        <!-- Y-axis labels -->
+                        <div class="absolute left-2 top-8 bottom-16 flex flex-col justify-between text-sm text-gray-600">
+                            <span>21.0</span>
+                            <span>20.0</span>
+                            <span>19.0</span>
+                            <span>18.0</span>
+                            <span>17.0</span>
+                        </div>
+                        
+                        <!-- Chart area -->
+                        <div class="ml-12 mr-4 h-full relative">
+                            <!-- Grid lines -->
+                            <div class="absolute inset-0">
+                                <div class="absolute w-full border-t border-gray-300/50" style="top: 0%"></div>
+                                <div class="absolute w-full border-t border-gray-300/50" style="top: 25%"></div>
+                                <div class="absolute w-full border-t border-gray-300/50" style="top: 50%"></div>
+                                <div class="absolute w-full border-t border-gray-300/50" style="top: 75%"></div>
+                                <div class="absolute w-full border-t border-gray-300/50" style="top: 100%"></div>
+                            </div>
+                            
+                            <!-- Chart line -->
+                            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 400 240">
+                                <defs>
+                                    <linearGradient id="chartGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#3B82F6" />
+                                        <stop offset="100%" stop-color="#6366F1" />
+                                    </linearGradient>
+                                </defs>
+                                <!-- Smooth line path -->
+                                <path
+                                    d="M 0 160 Q 100 140 200 130 Q 300 120 400 140"
+                                    fill="none"
+                                    stroke="url(#chartGradient)"
+                                    stroke-width="4"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <!-- Data points -->
+                                <g>
+                                    <circle cx="0" cy="160" r="6" fill="white" stroke="url(#chartGradient)" stroke-width="3"/>
+                                    <text x="0" y="145" text-anchor="middle" class="text-sm font-semibold fill-blue-600">18.2</text>
+                                </g>
+                                <g>
+                                    <circle cx="100" cy="145" r="6" fill="white" stroke="url(#chartGradient)" stroke-width="3"/>
+                                    <text x="100" y="130" text-anchor="middle" class="text-sm font-semibold fill-blue-600">18.6</text>
+                                </g>
+                                <g>
+                                    <circle cx="200" cy="130" r="6" fill="white" stroke="url(#chartGradient)" stroke-width="3"/>
+                                    <text x="200" y="115" text-anchor="middle" class="text-sm font-semibold fill-blue-600">18.8</text>
+                                </g>
+                                <g>
+                                    <circle cx="300" cy="125" r="6" fill="white" stroke="url(#chartGradient)" stroke-width="3"/>
+                                    <text x="300" y="110" text-anchor="middle" class="text-sm font-semibold fill-blue-600">18.9</text>
+                                </g>
+                                <g>
+                                    <circle cx="400" cy="140" r="6" fill="white" stroke="url(#chartGradient)" stroke-width="3"/>
+                                    <text x="400" y="125" text-anchor="middle" class="text-sm font-semibold fill-blue-600">18.7</text>
+                                </g>
+                            </svg>
+                        </div>
+                        
+                        <!-- X-axis labels -->
+                        <div class="absolute bottom-2 left-12 right-4 flex justify-between text-sm text-gray-600">
+                            <span>10:00</span>
+                            <span>10:30</span>
+                            <span>11:00</span>
+                            <span>11:30</span>
+                            <span>12:00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-2xl border border-green-200">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <i data-lucide="trending-up" class="w-6 h-6 text-green-600"></i>
+                                <span class="text-green-800 font-semibold">Среднее значение</span>
+                            </div>
+                            <div class="text-2xl font-bold text-green-700">18.6 мм рт. ст.</div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-2xl border border-blue-200">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <i data-lucide="bar-chart-3" class="w-6 h-6 text-blue-600"></i>
+                                <span class="text-blue-800 font-semibold">Максимум</span>
+                            </div>
+                            <div class="text-2xl font-bold text-blue-700">18.9 мм рт. ст.</div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-purple-50 to-violet-50 p-6 rounded-2xl border border-purple-200">
+                            <div class="flex items-center space-x-3 mb-2">
+                                <i data-lucide="activity" class="w-6 h-6 text-purple-600"></i>
+                                <span class="text-purple-800 font-semibold">Минимум</span>
+                            </div>
+                            <div class="text-2xl font-bold text-purple-700">18.2 мм рт. ст.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="py-24 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+                    Скачать <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">приложение</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Установите приложение OcuWave на ваше Android устройство
+                </p>
+            </div>
+            
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-white/90 backdrop-blur-sm p-12 rounded-3xl shadow-2xl border border-blue-100 text-center">
+                    <div class="flex items-center justify-center w-24 h-24 bg-gradient-to-br from-green-500 to-emerald-500 rounded-3xl mx-auto mb-8 shadow-lg">
+                        <svg class="w-12 h-12 text-white" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.523 15.3414c-.5665 0-.9726-.4061-.9726-.9726v-1.7274c0-.5665.4061-.9726.9726-.9726s.9726.4061.9726.9726v1.7274c0 .5665-.4061.9726-.9726.9726zm-11.0461 0c-.5665 0-.9726-.4061-.9726-.9726v-1.7274c0-.5665.4061-.9726.9726-.9726s.9726.4061.9726.9726v1.7274c0 .5665-.4061.9726-.9726.9726zm5.5231-2.7c-.5665 0-.9726-.4061-.9726-.9726v-1.7274c0-.5665.4061-.9726.9726-.9726s.9726.4061.9726.9726v1.7274c0 .5665-.4061.9726-.9726.9726z"/>
+                            <path d="M1.5 4.5c0-1.1046.8954-2 2-2h17c1.1046 0 2 .8954 2 2v15c0 1.1046-.8954 2-2 2h-17c-1.1046 0-2-.8954-2-2v-15zm2 0v15h17v-15h-17z"/>
+                        </svg>
+                    </div>
+                    
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">OcuWave для Android</h3>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center justify-center space-x-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-green-600"></i>
+                            <span class="text-lg text-gray-700">Поддерживается Android 8.0+</span>
+                        </div>
+                        <div class="flex items-center justify-center space-x-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-green-600"></i>
+                            <span class="text-lg text-gray-700">Размер приложения: 15 МБ</span>
+                        </div>
+                        <div class="flex items-center justify-center space-x-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-green-600"></i>
+                            <span class="text-lg text-gray-700">Бесплатное использование</span>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-12 py-8 rounded-2xl font-bold text-2xl transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 mb-8" onclick="downloadApp()">
+                        <i data-lucide="download" class="w-6 h-6 mr-3 inline"></i>
+                        Скачать APK
+                    </button>
+                    
+                    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl border border-blue-200 mb-6">
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Что умеет приложение:</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mr-2"></i>
+                                Подключается к устройству OcuWave по Bluetooth
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mr-2"></i>
+                                Отображает результаты измерений в реальном времени
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mr-2"></i>
+                                Строит графики динамики ВГД
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mr-2"></i>
+                                Сохраняет историю всех измерений
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-green-600 mr-2"></i>
+                                Позволяет отправить результаты врачу
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-orange-50 to-amber-50 p-6 rounded-2xl border border-orange-200">
+                        <div class="flex items-center justify-center space-x-3 mb-2">
+                            <i data-lucide="clock" class="w-6 h-6 text-orange-600"></i>
+                            <span class="text-orange-800 font-semibold">В разработке</span>
+                        </div>
+                        <p class="text-orange-700">Версия для iOS находится в активной разработке</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-8">
+                    <div class="w-12 h-12 flex items-center justify-center">
+                        <svg width="48" height="48" viewBox="0 0 48 48" class="text-blue-400">
+                            <circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="24" cy="24" r="8" fill="currentColor"/>
+                            <circle cx="24" cy="24" r="3" fill="white"/>
+                        </svg>
+                    </div>
+                    <span class="text-2xl font-bold text-white">OcuWave</span>
+                </div>
+                <p class="text-blue-200 mb-8 max-w-md mx-auto text-lg leading-relaxed">
+                    Мобильное приложение для контроля внутриглазного давления
+                </p>
+                <p class="text-blue-200 text-lg">&copy; 2024 OcuWave. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Download app functionality
+        function downloadApp() {
+            // Здесь будет ссылка на скачивание APK файла
+            alert('Скачивание APK файла начнется в ближайшее время. Пока что функция в разработке.');
+        }
+    </script>
+</body>
+</html>
