@@ -23,8 +23,11 @@ import {
   Menu,
   X
 } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const HomePage = () => {
+  const { t } = useLanguage();
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -89,12 +92,15 @@ const HomePage = () => {
                 />
               </div>
             </div>
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="p-2 text-gray-700 hover:text-blue-600 transition-colors"
-            >
-              {menuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
-            </button>
+            <div className="flex items-center space-x-4">
+              <LanguageSwitcher />
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="p-2 text-gray-700 hover:text-blue-600 transition-colors"
+              >
+                {menuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -239,12 +245,17 @@ const HomePage = () => {
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
                 <div className="w-96 h-96 bg-gradient-to-br from-blue-200/50 to-cyan-300/50 rounded-full blur-3xl absolute -inset-8"></div>
-                <div className="relative w-full max-w-[500px] aspect-square bg-white rounded-3xl shadow-2xl flex items-center justify-center p-8 border-4 border-blue-200">
-                  <img
-                    src="/photo_5195025569333509443_w.jpg"
-                    alt="OcuWave Device"
-                    className="w-full h-full object-contain rounded-2xl"
-                  />
+                <div className="relative w-full max-w-[500px]">
+                  <div className="aspect-square bg-white rounded-3xl shadow-2xl flex items-center justify-center p-8 border-4 border-blue-200">
+                    <img
+                      src="/photo_5195025569333509443_w.jpg"
+                      alt="OcuWave Device"
+                      className="w-full h-full object-contain rounded-3xl"
+                    />
+                  </div>
+                  <div className="mt-4 text-center">
+                    <p className="text-lg font-semibold text-gray-700 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-2xl shadow-lg inline-block border border-blue-100">Версия продукта №2</p>
+                  </div>
                 </div>
                 <div className="absolute -top-6 -right-6 w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full flex items-center justify-center shadow-xl animate-pulse">
                   <Star className="w-10 h-10 text-white" />
@@ -310,28 +321,25 @@ const HomePage = () => {
             <div className="flex justify-center">
               <div className="relative">
                 <div className="w-96 h-96 bg-gradient-to-br from-blue-200/40 to-cyan-200/40 rounded-full blur-3xl absolute -inset-8 animate-pulse"></div>
-                <div className="relative w-[480px] h-[480px] bg-gradient-to-br from-white via-blue-50 to-cyan-50 rounded-3xl shadow-2xl p-8 border-4 border-blue-200">
+                <div className="relative w-full max-w-[480px]">
+                  <div className="aspect-square bg-gradient-to-br from-white via-blue-50 to-cyan-50 rounded-3xl shadow-2xl p-8 border-4 border-blue-200">
+                    <div className="relative w-full h-full bg-white rounded-2xl shadow-inner overflow-hidden">
+                      <img
+                        src="/68933fdd-9198-4e4e-b288-90a39da1f329.jpg"
+                        alt="OcuWave Device"
+                        className="w-full h-full object-contain p-4 hover:scale-105 transition-transform duration-500"
+                      />
 
-                  <div className="relative w-full h-full bg-white rounded-2xl shadow-inner overflow-hidden">
-                    <img
-                      src="/68933fdd-9198-4e4e-b288-90a39da1f329.jpg"
-                      alt="OcuWave Device"
-                      className="w-full h-full object-contain p-4 hover:scale-105 transition-transform duration-500"
-                    />
-
-                    <div className="absolute top-4 right-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                      <div className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                        <span>Активно</span>
+                      <div className="absolute top-4 right-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
+                        <div className="flex items-center space-x-2">
+                          <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                          <span>Активно</span>
+                        </div>
                       </div>
                     </div>
                   </div>
-
-                  <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-3 rounded-full shadow-xl">
-                    <div className="flex items-center space-x-2">
-                      <Activity className="w-5 h-5" />
-                      <span className="font-bold">OcuWave Тонометр</span>
-                    </div>
+                  <div className="mt-4 text-center">
+                    <p className="text-lg font-semibold text-gray-700 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-2xl shadow-lg inline-block border border-blue-100">Версия продукта №1</p>
                   </div>
                 </div>
 
@@ -438,7 +446,7 @@ const HomePage = () => {
                   <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-xl mb-4 mx-auto text-blue-600">
                     <Target className="w-8 h-8" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Позиционирование</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 text-center break-words">Позиционирование</h3>
                   <p className="text-gray-600 text-center leading-relaxed">Устройство подносится к глазу пациента на оптимальное расстояние</p>
                 </div>
               </div>
@@ -503,7 +511,7 @@ const HomePage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="bg-white/90 backdrop-blur-sm p-12 rounded-3xl shadow-2xl border border-blue-100">
               <div className="text-center mb-12">
-                <div className="text-6xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4">170 000 ₸</div>
+                <div className="text-6xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4">125 000 ₸</div>
                 <div className="text-xl text-gray-600 font-medium">Стоимость устройства</div>
                 <div className="mt-4 inline-flex items-center px-4 py-2 bg-gradient-to-r from-green-100 to-emerald-100 rounded-full">
                   <Star className="w-5 h-5 text-green-600 mr-2" />
