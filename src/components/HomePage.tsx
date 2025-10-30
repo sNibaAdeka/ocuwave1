@@ -239,9 +239,9 @@ const HomePage = () => {
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
                 <div className="w-96 h-96 bg-gradient-to-br from-blue-200/50 to-cyan-300/50 rounded-full blur-3xl absolute -inset-8"></div>
-                <div className="relative w-[500px] h-[500px] bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl shadow-2xl flex items-center justify-center p-8 border-4 border-blue-200">
+                <div className="relative w-full max-w-[500px] aspect-square bg-white rounded-3xl shadow-2xl flex items-center justify-center p-8 border-4 border-blue-200">
                   <img
-                    src="/files_6012049-1752319321150-68933fdd-9198-4e4e-b288-90a39da1f329.jpg"
+                    src="/photo_5195025569333509443_w.jpg"
                     alt="OcuWave Device"
                     className="w-full h-full object-contain rounded-2xl"
                   />

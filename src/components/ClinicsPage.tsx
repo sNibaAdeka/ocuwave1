@@ -216,14 +216,11 @@ const ClinicsPage = () => {
             <div className="flex justify-center lg:justify-end">
               <div className="relative">
                 <div className="w-96 h-96 bg-gradient-to-br from-blue-200/40 to-cyan-300/40 rounded-full blur-3xl absolute -inset-8"></div>
-                <div className="relative w-96 h-96 bg-gradient-to-br from-white via-blue-50 to-cyan-50 rounded-3xl shadow-2xl p-6 border-4 border-gradient-to-r from-blue-200 to-cyan-200">
+                <div className="relative w-full max-w-[400px] aspect-square bg-white rounded-3xl shadow-2xl p-6 border-4 border-blue-200">
                   <img
-                    src="/68933fdd-9198-4e4e-b288-90a39da1f329.jpg"
+                    src="/photo_5195025569333509443_w.jpg"
                     alt="OcuWave Device"
                     className="w-full h-full object-contain rounded-xl shadow-lg hover:scale-105 transition-transform duration-500"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                    }}
                   />
                   <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-2 rounded-full shadow-lg">
                     <span className="font-semibold text-sm">Профессиональное решение</span>
